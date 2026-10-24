@@ -31,4 +31,11 @@ export const journey: JourneyMilestone[] = [
     description:
       "Currently exploring AI agents, LLM engineering, Flutter, Java, Spring, and system design fundamentals — with focus on shipping production-ready applications.",
   },
+  {
+    id: "microbotware",
+    title: "Software Developer at Microbotware Technologies",
+    description:
+      "Started my professional journey as a Software Developer, building scalable web applications and contributing to real-world production projects in a fast-paced environment.",
+    period: "Present", // You can update this to the joining month/year if you prefer (e.g., "Oct 2026 - Present")
+  },
 ];
