@@ -7,13 +7,19 @@ export const certifications: Certification[] = [
     issuer: "VGLUG Foundation",
     date: "May 2025 - Apr 2026",
     type: "course",
-    // image: "/certificates/python-genai.jpg", (You can add this later when you have the digital file)
   },
   {
     id: "college-2.0",
     name: "College 2.0 - 1st Prize",
     issuer: "Staff Schedule Reminder System (Digital Solution)",
     date: "Sep 2025",
+    type: "award",
+  },
+  {
+    id: "hacktoberfest-2025",
+    name: "Hacktoberfest Contributor",
+    issuer: "Open Source Contribution (Earned T-shirt)",
+    date: "Oct 2025",
     type: "award",
   },
   {
