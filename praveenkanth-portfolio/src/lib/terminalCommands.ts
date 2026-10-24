@@ -4,6 +4,7 @@ import { projects } from "@/data/projects";
 
 export type TerminalLine = { text: string; tone?: "prompt" | "output" | "error" };
 
+// Only these standard commands show up in the quick buttons
 export const terminalCommands = ["help", "about", "skills", "projects", "contact"] as const;
 export type TerminalCommand = (typeof terminalCommands)[number];
 
@@ -34,6 +35,26 @@ export function runTerminalCommand(raw: string): TerminalLine[] {
         { text: `GitHub:   ${site.github}`, tone: "output" },
         { text: `LinkedIn: ${site.linkedin}`, tone: "output" },
       ];
+    
+    // --- EASTER EGGS ---
+    case "sudo":
+      return [
+        { text: "Nice try! You don't have root access here. 😉", tone: "error" },
+        { text: "Try 'coffee' instead.", tone: "output" },
+      ];
+    case "coffee":
+      return [
+        { text: "☕ Brewing coffee...", tone: "prompt" },
+        { text: "Error 418: I'm a teapot. Cannot brew coffee.", tone: "error" },
+        { text: "But here's a virtual high-five for finding this! ✋", tone: "output" },
+      ];
+    case "matrix":
+      return [
+        { text: "Wake up, Neo...", tone: "output" },
+        { text: "The Matrix has you...", tone: "output" },
+        { text: "Follow the white rabbit. 🐇", tone: "output" },
+      ];
+      
     case "":
       return [];
     default:
