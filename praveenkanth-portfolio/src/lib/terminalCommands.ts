@@ -17,7 +17,7 @@ export function runTerminalCommand(raw: string): TerminalLine[] {
       ];
     case "about":
       return [
-        { text: "Praveenkanth — Full-Stack Developer & AI-Assisted Developer.", tone: "output" },
+        { text: "Praveenkanth G — Full-Stack Developer & AI-Assisted Developer.", tone: "output" },
         { text: "B.Sc. Computer Science graduate based in Villupuram, India.", tone: "output" },
         { text: "Builds practical web and mobile apps with AI as a force multiplier.", tone: "output" },
       ];
