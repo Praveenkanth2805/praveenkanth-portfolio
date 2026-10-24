@@ -11,7 +11,7 @@ export type GitHubProfile = {
 
 export const fallbackGitHub: GitHubProfile = {
   login: "Praveenkanth2805",
-  name: "Praveenkanth",
+  name: "Praveenkanth G",
   bio: "Full-Stack Developer · AI-Assisted Developer",
   publicRepos: 0,
   followers: 0,
