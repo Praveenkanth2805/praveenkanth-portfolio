@@ -10,27 +10,27 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Praveenkanth | Software Developer & AI-Assisted Developer",
-    template: "%s | Praveenkanth",
+    default: "Praveenkanth G | Software Developer & AI-Assisted Developer",
+    template: "%s | Praveenkanth G",
   },
   description:
     "Explore Praveenkanth's software projects, full-stack development skills, and AI-assisted development workflow.",
   keywords: [
-    "Praveenkanth", "Full-Stack Developer", "AI-Assisted Developer",
+    "Praveenkanth G", "Full-Stack Developer", "AI-Assisted Developer",
     "React", "Next.js", "Laravel", "Python", "Flutter", "Portfolio",
   ],
-  authors: [{ name: "Praveenkanth" }],
+  authors: [{ name: "Praveenkanth G" }],
   openGraph: {
-    title: "Praveenkanth | Software Developer & AI-Assisted Developer",
+    title: "Praveenkanth G | Software Developer & AI-Assisted Developer",
     description:
       "Explore Praveenkanth's software projects, full-stack development skills, and AI-assisted development workflow.",
     url: site.url,
-    siteName: "Praveenkanth Portfolio",
+    siteName: "Praveenkanth G Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Praveenkanth | Software Developer & AI-Assisted Developer",
+    title: "Praveenkanth G | Software Developer & AI-Assisted Developer",
     description: "Full-stack projects, skills, and AI-assisted development workflow.",
   },
   robots: { index: true, follow: true },
