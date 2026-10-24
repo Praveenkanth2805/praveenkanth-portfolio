@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Praveenkanth G",
   },
   description:
-    "Explore Praveenkanth's software projects, full-stack development skills, and AI-assisted development workflow.",
+     "Official portfolio of Praveenkanth G, showcasing software projects, full-stack web and mobile development skills, Python development, and AI-assisted development workflows.",
   keywords: [
     "Praveenkanth G", "Full-Stack Developer", "AI-Assisted Developer",
     "React", "Next.js", "Laravel", "Python", "Flutter", "Portfolio",

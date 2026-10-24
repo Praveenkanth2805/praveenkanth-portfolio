@@ -8,7 +8,7 @@ export const site = {
   githubUsername: "Praveenkanth2805",
   linkedin: "https://www.linkedin.com/in/praveenkanth2805",
   instagram: "https://www.instagram.com/praveenkanth2805/",
-  url: "https://praveenkanth.vercel.app",
+  url: "https://praveenkanthg.vercel.app",
 } as const;
 
 export const navigation = [
