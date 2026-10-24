@@ -62,13 +62,14 @@ export function JourneyTimeline() {
       />
 
       <div className="relative mx-auto mt-10 max-w-3xl">
-        {/* Background Line */}
-        <div className="absolute inset-y-6 left-[19px] w-px bg-gradient-to-b from-indigo-500/30 via-slate-400/20 to-transparent sm:left-[23px]" />
+        {/* Static Background Line */}
+        <div className="absolute inset-y-6 left-[19px] w-px bg-slate-500/20 sm:left-[23px]" />
 
-        {/* Animated Foreground Line - Replaced inline style with inset-y-6 */}
+        {/* Animated Foreground Line - Theme aware color */}
         <div
           className={cn(
-            "absolute inset-y-6 left-[19px] w-px origin-top bg-gradient-to-b from-indigo-500 via-violet-500 to-indigo-400 transition-transform duration-1000 ease-out sm:left-[23px]",
+            "absolute inset-y-6 left-[19px] w-px origin-top transition-transform duration-1000 ease-out sm:left-[23px]",
+            c.accentBg,
             inView ? "scale-y-100" : "scale-y-0",
           )}
         />
@@ -79,32 +80,36 @@ export function JourneyTimeline() {
 
             return (
               <li key={m.id} className="group relative pl-12 sm:pl-16">
+                {/* Timeline Node (Circle) */}
                 <div
                   className={cn(
                     "absolute left-[7px] top-6 z-10 flex h-6 w-6 items-center justify-center rounded-full border transition-all duration-500 sm:left-[11px] sm:h-7 sm:w-7",
                     active
-                      ? "scale-100 border-indigo-500 bg-indigo-600 text-white shadow-lg shadow-indigo-500/25"
-                      : cn(c.surface, "scale-90 border-slate-300/60 opacity-60"),
+                      ? cn("scale-100 shadow-lg", c.accentBg, c.accentBorder)
+                      : cn(c.surface, "scale-90 opacity-60", c.divider),
                   )}
                 >
                   {active ? (
-                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-white" />
                   ) : (
-                    <span className="h-2 w-2 rounded-full bg-slate-400/60" />
+                    <span className={cn("h-2 w-2 rounded-full", c.subtle)} />
                   )}
                 </div>
 
+                {/* Content Card - Now uses same hover effects as other cards */}
                 <article
                   className={cn(
-                    "relative overflow-hidden rounded-2xl border p-5 transition-all duration-700 sm:p-6",
+                    "relative overflow-hidden rounded-2xl p-5 transition-all duration-700 sm:p-6",
                     c.surface,
                     active
-                      ? "translate-x-0 border-indigo-500/20 opacity-100 shadow-sm shadow-indigo-500/5"
-                      : "translate-x-4 border-transparent opacity-0",
-                    "group-hover:border-indigo-500/30 group-hover:shadow-lg group-hover:shadow-indigo-500/5",
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-4 opacity-0",
+                    c.surfaceHover,
+                    c.accentGlow,
                   )}
                 >
-                  <div className="absolute inset-y-0 left-0 w-1 origin-bottom scale-y-0 bg-gradient-to-b from-indigo-500 to-violet-500 transition-transform duration-300 group-hover:scale-y-100" />
+                  {/* Left Accent Bar on Hover - Theme aware */}
+                  <div className={cn("absolute inset-y-0 left-0 w-1 origin-bottom scale-y-0 transition-transform duration-300 group-hover:scale-y-100", c.accentBg)} />
 
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
@@ -131,8 +136,9 @@ export function JourneyTimeline() {
 
                     <ArrowUpRight
                       className={cn(
-                        "h-4 w-4 shrink-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-indigo-500",
+                        "h-4 w-4 shrink-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-current",
                         c.muted,
+                        c.accent,
                       )}
                     />
                   </div>

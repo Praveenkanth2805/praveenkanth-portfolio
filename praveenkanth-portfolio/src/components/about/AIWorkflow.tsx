@@ -7,12 +7,12 @@ import { cn } from "@/lib/cn";
 const STAGES = [
   { id: "understand", title: "Understand Requirements", output: ["$ analyze requirements", "→ Break feature into user stories", "→ Identify data model + edge cases"] },
   { id: "design", title: "Design UI & Architecture", output: ["$ plan architecture", "→ Wireframe components with AI", "→ Choose stack + data flow"] },
-  { id: "scaffold", title: "AI-Assisted Scaffolding", output: ["$ scaffold --ai", "→ Cursor / Copilot generate boilerplate", "→ Prune, refine, review"] },
+  { id: "scaffold", title: "AI-Assisted Scaffolding", output: ["$ scaffold --ai", "→ Chatgpt / Deepseek generate boilerplate", "→ Prune, refine, review"] },
   { id: "develop", title: "Development", output: ["$ dev", "→ Build UI + business logic", "→ Pair-program with AI on tricky parts"] },
   { id: "api", title: "API Integration", output: ["$ integrate api", "→ Wire REST endpoints", "→ Validate contracts + error states"] },
   { id: "db", title: "Database Integration", output: ["$ db migrate", "→ Model schema + migrations", "→ Enforce constraints + indexes"] },
   { id: "test", title: "Testing & Debugging", output: ["$ test --ai", "→ AI-assisted root-cause analysis", "→ Reproduce → fix → verify"] },
-  { id: "deploy", title: "Deployment & Improvement", output: ["$ deploy --prod", "→ Ship to Vercel / VPS", "→ Monitor + iterate"] },
+  { id: "deploy", title: "Deployment & Improvement", output: ["$ deploy --prod", "→ Ship to Vercel / VPS / Render", "→ Monitor + iterate"] },
 ];
 
 export function AIWorkflow() {
