@@ -97,7 +97,7 @@ export function Hero() {
             <Terminal
               welcome={[
                 { text: "whoami", tone: "prompt" },
-                { text: "Praveenkanth — Software Developer & AI-Assisted Developer", tone: "output" },
+                { text: "Praveenkanth G — Software Developer & AI-Assisted Developer", tone: "output" },
                 { text: "stack", tone: "prompt" },
                 { text: "React · Laravel · Python · Flutter · REST APIs", tone: "output" },
                 { text: "hint", tone: "prompt" },

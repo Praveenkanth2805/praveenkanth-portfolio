@@ -9,7 +9,7 @@ export function ContactTerminal() {
       <Terminal
         welcome={[
           { text: "whoami", tone: "prompt" },
-          { text: "Praveenkanth — Full-Stack Developer & AI-Assisted Developer", tone: "output" },
+          { text: "Praveenkanth G — Full-Stack Developer & AI-Assisted Developer", tone: "output" },
           { text: "contact", tone: "prompt" },
           { text: "Type 'contact' to see my verified details", tone: "output" },
         ]}
