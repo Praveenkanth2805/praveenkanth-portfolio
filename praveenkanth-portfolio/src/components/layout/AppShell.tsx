@@ -6,6 +6,7 @@ import { Sidebar } from "./Sidebar";
 import { Toolbar } from "./Toolbar";
 import { Footer } from "./Footer";
 import { MobileDrawerOverlay } from "./MobileDrawerOverlay";
+import { ReadingProgress } from "@/components/shared/ReadingProgress";
 import { cn } from "@/lib/cn";
 
 function Shell({ children }: { children: ReactNode }) {
@@ -14,8 +15,13 @@ function Shell({ children }: { children: ReactNode }) {
     <div className={cn("flex h-screen overflow-hidden", c.pageBg, c.pageText)}>
       <Sidebar />
       <MobileDrawerOverlay />
-      <div className={cn("flex min-w-0 flex-1 flex-col overflow-y-auto", c.scrollbar)}>
+      {/* Added id="main-scroll-container" for the progress bar to track */}
+      <div
+        id="main-scroll-container"
+        className={cn("flex min-w-0 flex-1 flex-col overflow-y-auto", c.scrollbar)}
+      >
         <Toolbar />
+        <ReadingProgress />
         <main className="flex-1 px-4 py-8 md:px-8">{children}</main>
         <Footer />
       </div>
