@@ -20,21 +20,28 @@ export function Terminal({
 
   return (
     <div
-      className={cn("overflow-hidden rounded-2xl font-mono text-sm", c.terminal, className)}
+      className={cn(
+        // Increased overall size and font
+        "flex h-[420px] flex-col overflow-hidden rounded-2xl font-mono text-[15px] shadow-2xl", 
+        c.terminal, 
+        className
+      )}
       onClick={() => inputRef.current?.focus()}
     >
-      <div className={cn("flex items-center gap-2 border-b px-4 py-2 text-xs", c.divider)}>
-        <span className="h-2.5 w-2.5 rounded-full bg-rose-500" />
-        <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+      <div className={cn("flex shrink-0 items-center gap-2 border-b px-4 py-3 text-xs", c.divider)}>
+        <span className="h-3 w-3 rounded-full bg-rose-500" />
+        <span className="h-3 w-3 rounded-full bg-amber-400" />
+        <span className="h-3 w-3 rounded-full bg-emerald-500" />
         <span className={cn("ml-2", c.muted)}>{title}</span>
       </div>
-      <div className={cn("max-h-72 space-y-1 overflow-y-auto p-4", c.scrollbar)}>
+      
+      {/* Terminal output area */}
+      <div className={cn("flex-1 space-y-1.5 overflow-y-auto p-5", c.scrollbar)}>
         {lines.map((l, i) => (
           <p
             key={i}
             className={cn(
-              "whitespace-pre-wrap break-words",
+              "whitespace-pre-wrap break-words leading-relaxed",
               l.tone === "error"
                 ? c.terminalError
                 : l.tone === "prompt"
@@ -66,12 +73,12 @@ export function Terminal({
           />
         </div>
       </div>
-      <div className={cn("flex flex-wrap gap-2 border-t px-4 py-2", c.divider)}>
+      <div className={cn("flex shrink-0 flex-wrap gap-2 border-t px-4 py-3", c.divider)}>
         {commands.map((cmd) => (
           <button
             key={cmd}
             onClick={() => runQuick(cmd)}
-            className={cn("rounded-md px-2 py-0.5 text-xs transition-colors", c.chip, c.ring)}
+            className={cn("rounded-md px-2.5 py-1 text-xs transition-colors", c.chip, c.ring)}
           >
             {cmd}
           </button>

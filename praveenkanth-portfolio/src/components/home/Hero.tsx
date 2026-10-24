@@ -49,26 +49,32 @@ export function Hero() {
   return (
     <section className={cn("relative overflow-hidden rounded-3xl px-6 py-12 md:px-10 md:py-16", c.heroGradient)}>
       <div className="grid items-center gap-10 md:grid-cols-2">
+        
+        {/* Text Content: Back to Left (Default DOM order) */}
         <div>
           <div className={cn("mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium", c.accentBgSoft)}>
             <Sparkles className="h-3.5 w-3.5" />
             <span>AI-Assisted Developer</span>
           </div>
+          
           <h1 className={cn("text-4xl font-bold leading-tight tracking-tight sm:text-5xl", c.pageText)}>
             {site.name}
             <span className={c.accent}> — </span>
             Software Developer
             <br />& AI-Assisted Developer
           </h1>
+          
           <p className={cn("mt-4 min-h-[1.75rem] text-lg font-medium", c.muted)}>
             {tagline}
             {!reduced && (
               <span className={cn("ml-0.5 inline-block h-5 w-0.5 align-middle", c.accentBg, "animate-pulse")} />
             )}
           </p>
+          
           <p className={cn("mt-4 max-w-xl text-sm leading-relaxed", c.muted)}>
             B.Sc. Computer Science graduate building practical, user-focused web and mobile applications — with AI embedded in the development workflow.
           </p>
+          
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
@@ -84,16 +90,23 @@ export function Hero() {
             </Link>
           </div>
         </div>
-        <Terminal
-          welcome={[
-            { text: "whoami", tone: "prompt" },
-            { text: "Praveenkanth — Software Developer & AI-Assisted Developer", tone: "output" },
-            { text: "stack", tone: "prompt" },
-            { text: "React · Laravel · Python · Flutter · REST APIs", tone: "output" },
-            { text: "hint", tone: "prompt" },
-            { text: "Type 'help' or click a command below", tone: "output" },
-          ]}
-        />
+
+        {/* Terminal: Back to Right, with 3D Tilt Effect */}
+        <div className="md:perspective-[1000px]">
+          <div className="transition-transform duration-500 ease-out md:[transform:rotateY(-6deg)_rotateX(2deg)] md:hover:[transform:rotateY(0deg)_rotateX(0deg)]">
+            <Terminal
+              welcome={[
+                { text: "whoami", tone: "prompt" },
+                { text: "Praveenkanth — Software Developer & AI-Assisted Developer", tone: "output" },
+                { text: "stack", tone: "prompt" },
+                { text: "React · Laravel · Python · Flutter · REST APIs", tone: "output" },
+                { text: "hint", tone: "prompt" },
+                { text: "Type 'help' or click a command below", tone: "output" },
+              ]}
+            />
+          </div>
+        </div>
+
       </div>
     </section>
   );
