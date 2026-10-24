@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image"; // <-- Added Next.js Image component
 import { FolderGit2, ExternalLink } from "lucide-react";
 import { Project } from "@/types/project";
 import { useTheme } from "@/hooks/useTheme";
@@ -18,24 +19,33 @@ export function ProjectCard({
     <button
       onClick={(e) => onClick?.(e.currentTarget)}
       className={cn(
-        // h-full மூலம் grid cell-ஐ முழுசா நிரப்பும்
         "group flex h-full w-full flex-col gap-4 rounded-2xl p-5 text-left transition-all duration-300",
         c.surface,
         c.surfaceHover,
         c.ring,
       )}
     >
-      {/* Image Preview */}
+      {/* Image Preview - Added relative for Next/Image fill */}
       <div
         className={cn(
-          "flex aspect-[16/9] shrink-0 items-center justify-center overflow-hidden rounded-xl",
+          "relative flex aspect-[16/9] shrink-0 items-center justify-center overflow-hidden rounded-xl",
           c.cardPreview,
         )}
       >
-        <FolderGit2 className={cn("h-10 w-10 opacity-60", c.accent)} aria-hidden />
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <FolderGit2 className={cn("h-10 w-10 opacity-60", c.accent)} aria-hidden />
+        )}
       </div>
 
-      {/* Content (Title & Desc) - flex-1 கொடுத்து இடத்தை நிரப்ப வைக்கிறோம் */}
+      {/* Content */}
       <div className="flex flex-1 flex-col gap-2">
         <h3 className={cn("line-clamp-2 text-lg font-semibold leading-snug", c.pageText)}>
           {project.title}
@@ -45,7 +55,7 @@ export function ProjectCard({
         </p>
       </div>
 
-      {/* Footer (Tags & Button) - mt-auto கொடுத்து எப்பவும் கீழே இருக்க வைக்கிறோம் */}
+      {/* Footer */}
       <div className="mt-auto flex flex-col gap-3 pt-2">
         <div className="flex flex-wrap gap-1.5">
           {project.technologies.slice(0, 4).map((t) => (

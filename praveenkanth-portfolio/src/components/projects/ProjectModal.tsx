@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image"; // <-- Added
 import { X, Github, ExternalLink, FolderGit2 } from "lucide-react";
 import { Project } from "@/types/project";
 import { useTheme } from "@/hooks/useTheme";
@@ -57,7 +58,7 @@ export function ProjectModal({
       aria-labelledby="project-modal-title"
     >
       <div ref={wrapperRef} className="relative w-full max-w-4xl">
-        {/* Close button — outside the scroll container so it never scrolls away */}
+        {/* Close button */}
         <button
           onClick={onClose}
           aria-label="Close"
@@ -82,15 +83,26 @@ export function ProjectModal({
           )}
         >
           <div className="grid gap-0 md:grid-cols-2">
-            {/* Preview */}
+            {/* Preview Image */}
             <div
               className={cn(
-                "flex aspect-[16/10] items-center justify-center border-b md:border-b-0 md:border-r",
+                "relative flex aspect-[16/10] items-center justify-center border-b md:border-b-0 md:border-r overflow-hidden",
                 c.divider,
                 c.cardPreview,
               )}
             >
-              <FolderGit2 className={cn("h-16 w-16 opacity-60", c.accent)} aria-hidden />
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              ) : (
+                <FolderGit2 className={cn("h-16 w-16 opacity-60", c.accent)} aria-hidden />
+              )}
             </div>
 
             {/* Details */}
