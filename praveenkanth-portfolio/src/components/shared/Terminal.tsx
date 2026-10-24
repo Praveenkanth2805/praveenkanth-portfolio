@@ -21,7 +21,6 @@ export function Terminal({
   return (
     <div
       className={cn(
-        // Increased overall size and font
         "flex h-[420px] flex-col overflow-hidden rounded-2xl font-mono text-[15px] shadow-2xl", 
         c.terminal, 
         className
@@ -66,13 +65,15 @@ export function Terminal({
               }
             }}
             placeholder="type 'help'"
-            className={cn("flex-1 bg-transparent outline-none placeholder:opacity-40", c.pageText)}
+            // FIXED: Removed c.pageText and hardcoded text-slate-100 for visibility on all dark terminals
+            className="flex-1 bg-transparent text-slate-100 outline-none placeholder:text-slate-400 placeholder:opacity-60"
             aria-label="Terminal input"
             autoComplete="off"
             spellCheck={false}
           />
         </div>
       </div>
+      
       <div className={cn("flex shrink-0 flex-wrap gap-2 border-t px-4 py-3", c.divider)}>
         {commands.map((cmd) => (
           <button
