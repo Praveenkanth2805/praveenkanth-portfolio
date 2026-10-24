@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -63,14 +62,15 @@ export function JourneyTimeline() {
       />
 
       <div className="relative mx-auto mt-10 max-w-3xl">
-        <div className="absolute bottom-6 left-[19px] top-6 w-px bg-gradient-to-b from-indigo-500/30 via-slate-400/20 to-transparent sm:left-[23px]" />
+        {/* Background Line */}
+        <div className="absolute inset-y-6 left-[19px] w-px bg-gradient-to-b from-indigo-500/30 via-slate-400/20 to-transparent sm:left-[23px]" />
 
+        {/* Animated Foreground Line - Replaced inline style with inset-y-6 */}
         <div
           className={cn(
-            "absolute left-[19px] top-6 w-px origin-top bg-gradient-to-b from-indigo-500 via-violet-500 to-indigo-400 transition-transform duration-1000 ease-out sm:left-[23px]",
+            "absolute inset-y-6 left-[19px] w-px origin-top bg-gradient-to-b from-indigo-500 via-violet-500 to-indigo-400 transition-transform duration-1000 ease-out sm:left-[23px]",
             inView ? "scale-y-100" : "scale-y-0",
           )}
-          style={{ height: "calc(100% - 3rem)" }}
         />
 
         <ol className="space-y-6 sm:space-y-8">
