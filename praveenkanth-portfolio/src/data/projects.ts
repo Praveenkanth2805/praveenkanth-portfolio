@@ -120,7 +120,9 @@ export const projects: Project[] = [
     ],
     categories: ["AI & Automation", "Experiments"],
     featured: false,
-    imageType: "illustration",
+    // imageType: "illustration",
+    // image: "/projects/attendance.png", // Uncomment this line if you have a screenshot image for this project
+    // imageType: "screenshot", // Uncomment this line if you have a screenshot image for this project
     features: [
       "AI / LLM integrations (OpenAI, Claude, Gemini)",
       "Prompt engineering for structured code generation",
