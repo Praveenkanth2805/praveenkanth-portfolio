@@ -45,9 +45,10 @@ export function ThemeSelector() {
         <ul
           role="listbox"
           className={cn(
-            "absolute right-0 top-full z-50 mt-2 w-56 rounded-xl p-1 shadow-2xl",
+            "absolute right-0 top-full z-50 mt-2 w-56 overflow-y-auto rounded-xl p-1 shadow-2xl max-h-64",
             c.surface,
             c.pageText,
+            c.scrollbar,
           )}
         >
           {THEME_NAMES.map((t) => (

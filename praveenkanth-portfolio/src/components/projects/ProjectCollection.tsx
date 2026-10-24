@@ -3,7 +3,6 @@ import { useCallback, useRef, useState } from "react";
 import { Project } from "@/types/project";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectModal } from "./ProjectModal";
-import { cn } from "@/lib/cn";
 
 export function ProjectCollection({
   projects,
@@ -22,17 +21,17 @@ export function ProjectCollection({
 
   const close = useCallback(() => {
     setActive(null);
-    // Restore focus to triggering card after modal unmounts
     requestAnimationFrame(() => triggerRef.current?.focus());
   }, []);
 
   return (
     <>
       <div
-        className={cn(
-          "grid gap-6",
-          layout === "featured" ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3",
-        )}
+        className={
+          layout === "masonry"
+            ? "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            : "grid gap-6 sm:grid-cols-2"
+        }
       >
         {projects.map((p) => (
           <ProjectCard key={p.id} project={p} onClick={(btn) => open(p, btn)} />
