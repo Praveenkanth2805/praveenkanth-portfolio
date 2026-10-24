@@ -10,4 +10,5 @@ export type Project = {
   liveDemo?: string;
   featured?: boolean;
   features?: string[];
+  isConfidential?: boolean; // Added for NDA/Company projects
 };

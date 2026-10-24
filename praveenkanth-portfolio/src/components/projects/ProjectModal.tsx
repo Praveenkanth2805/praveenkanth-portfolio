@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image"; // <-- Added
-import { X, Github, ExternalLink, FolderGit2 } from "lucide-react";
+import Image from "next/image";
+import { X, Github, ExternalLink, FolderGit2, Lock } from "lucide-react";
 import { Project } from "@/types/project";
 import { useTheme } from "@/hooks/useTheme";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
@@ -107,12 +107,20 @@ export function ProjectModal({
 
             {/* Details */}
             <div className="p-6 md:pt-14 md:pr-16 md:pb-8 md:pl-8">
-              <h3
-                id="project-modal-title"
-                className={cn("text-2xl font-bold leading-tight", c.pageText)}
-              >
-                {project.title}
-              </h3>
+              <div className="flex flex-wrap items-center gap-3">
+                <h3
+                  id="project-modal-title"
+                  className={cn("text-2xl font-bold leading-tight", c.pageText)}
+                >
+                  {project.title}
+                </h3>
+                {project.isConfidential && (
+                  <span className={cn("flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider", c.chip)}>
+                    <Lock className="h-3 w-3" /> Confidential
+                  </span>
+                )}
+              </div>
+
               <p className={cn("mt-3 text-sm leading-relaxed", c.muted)}>
                 {project.description}
               </p>
@@ -120,7 +128,7 @@ export function ProjectModal({
               {project.features && project.features.length > 0 && (
                 <div className="mt-5">
                   <h4 className={cn("mb-2 text-sm font-semibold", c.pageText)}>
-                    Key features
+                    Key Contributions
                   </h4>
                   <ul className={cn("space-y-1.5 text-sm", c.muted)}>
                     {project.features.map((f) => (
@@ -164,7 +172,7 @@ export function ProjectModal({
               </div>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {project.github && (
+                {project.github && !project.isConfidential && (
                   <a
                     href={project.github}
                     target="_blank"
@@ -192,6 +200,11 @@ export function ProjectModal({
                   >
                     <ExternalLink className="h-4 w-4" /> Live Demo
                   </a>
+                )}
+                {project.isConfidential && (
+                  <div className={cn("inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium opacity-70", c.surface, c.divider, "border")}>
+                    <Lock className="h-4 w-4" /> Source code is private
+                  </div>
                 )}
               </div>
             </div>

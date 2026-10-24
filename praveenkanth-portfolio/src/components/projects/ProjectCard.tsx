@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image"; // <-- Added Next.js Image component
-import { FolderGit2, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { FolderGit2, ExternalLink, Lock } from "lucide-react";
 import { Project } from "@/types/project";
 import { useTheme } from "@/hooks/useTheme";
 import { TechChip } from "@/components/shared/TechChip";
@@ -25,7 +25,7 @@ export function ProjectCard({
         c.ring,
       )}
     >
-      {/* Image Preview - Added relative for Next/Image fill */}
+      {/* Image Preview */}
       <div
         className={cn(
           "relative flex aspect-[16/9] shrink-0 items-center justify-center overflow-hidden rounded-xl",
@@ -47,9 +47,16 @@ export function ProjectCard({
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-2">
-        <h3 className={cn("line-clamp-2 text-lg font-semibold leading-snug", c.pageText)}>
-          {project.title}
-        </h3>
+        <div className="flex items-start justify-between gap-2">
+          <h3 className={cn("line-clamp-2 text-lg font-semibold leading-snug", c.pageText)}>
+            {project.title}
+          </h3>
+          {project.isConfidential && (
+            <span className={cn("flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider", c.chip)}>
+              <Lock className="h-3 w-3" /> NDA
+            </span>
+          )}
+        </div>
         <p className={cn("line-clamp-3 text-sm", c.muted)}>
           {project.description}
         </p>
