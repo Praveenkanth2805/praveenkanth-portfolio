@@ -4,7 +4,7 @@ export const certifications: Certification[] = [
   {
     id: "python-genai",
     name: "Python with GenAI",
-    issuer: "Course Completion", // Replace with actual issuer name if needed
+    issuer: "VGLUG Foundation",
     date: "May 2025 - Apr 2026",
     type: "course",
     // image: "/certificates/python-genai.jpg", (You can add this later when you have the digital file)
