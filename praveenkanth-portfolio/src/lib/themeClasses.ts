@@ -32,9 +32,11 @@ export const themeClasses = {
   glassmorphism: {
     pageBg: "bg-gradient-to-br from-indigo-400 via-purple-300 to-pink-300",
     pageText: "text-slate-900",
-    // Real glass look: low opacity + strong blur + light border + soft shadow
-    surface: "bg-white/40 backdrop-blur-2xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]",
-    surfaceHover: "hover:bg-white/55 hover:border-white/90 hover:shadow-[0_12px_40px_0_rgba(31,38,135,0.25)] hover:-translate-y-0.5",
+    
+    // INCREASED OPACITY from /40 to /60 so it looks like the bright card
+    surface: "bg-white/60 backdrop-blur-2xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]",
+    
+    surfaceHover: "hover:bg-white/75 hover:border-white/90 hover:shadow-[0_12px_40px_0_rgba(31,38,135,0.25)] hover:-translate-y-0.5",
     muted: "text-slate-800",
     subtle: "text-slate-700",
     accent: "text-indigo-800",
@@ -42,7 +44,7 @@ export const themeClasses = {
     accentBgSoft: "bg-white/50 border border-white/60 text-indigo-900 backdrop-blur-md",
     accentBorder: "border-white/60",
     accentGlow: "hover:shadow-[0_0_40px_-8px_rgb(99_102_241_/_0.6)]",
-    chip: "bg-white/50 text-slate-900 border border-white/60 backdrop-blur-md shadow-sm",
+    chip: "bg-white/60 text-slate-900 border border-white/60 backdrop-blur-md shadow-sm",
     input: "bg-white/50 border border-white/60 focus:border-indigo-400 text-slate-900 backdrop-blur-md",
     terminal: "bg-slate-900/80 backdrop-blur-2xl border border-white/30 shadow-2xl",
     terminalPrompt: "text-indigo-300",
@@ -57,11 +59,13 @@ export const themeClasses = {
     avatarBg: "bg-white/50 text-indigo-900 border border-white/60 backdrop-blur-md shadow-sm",
     cardPreview: "bg-white/30 border border-white/50 backdrop-blur-md shadow-inner",
     scrollFade: "from-white/60",
-    modalOverlay: "bg-indigo-950/40 backdrop-blur-md",
+    
+    // CHANGED FROM DARK TO LIGHT so it doesn't muddy the modal glass
+    modalOverlay: "bg-white/10 backdrop-blur-md", 
+    
     scrollbar: "[&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/60 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/90 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.6)_transparent]",
   },
   claymorphism: {
-    // Match page and surface exactly for Neumorphic/Clay shadows to work
     pageBg: "bg-[#e0e7ff]", 
     pageText: "text-indigo-950",
     surface: "bg-[#e0e7ff] rounded-[2rem] shadow-[12px_12px_24px_rgba(180,190,230,0.6),-12px_-12px_24px_rgba(255,255,255,1)]",
