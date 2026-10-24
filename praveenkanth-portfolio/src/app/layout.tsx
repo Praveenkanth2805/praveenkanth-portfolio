@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Praveenkanth G", "Full-Stack Developer", "AI-Assisted Developer",
     "React", "Next.js", "Laravel", "Python", "Flutter", "Portfolio",
   ],
+  verification: {
+  google: "RdYckMqKa8nAtaBuypwgtsEaYCK1PRXIiQVYlDh1mFs",
+},
   authors: [{ name: "Praveenkanth G" }],
   openGraph: {
     title: "Praveenkanth G | Software Developer & AI-Assisted Developer",
