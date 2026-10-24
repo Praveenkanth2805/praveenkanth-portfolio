@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "@/hooks/useTheme";
 import { site } from "@/data/site";
-import { MapPin, GraduationCap } from "lucide-react";
+import { MapPin, GraduationCap, Briefcase } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 export function Introduction() {
@@ -15,29 +15,38 @@ export function Introduction() {
           </div>
           <div>
             <h2 className={cn("text-2xl font-bold", c.pageText)}>Hi, I'm {site.name}</h2>
-            <p className={cn("text-sm", c.accent)}>Full-Stack Developer · AI-Assisted Developer</p>
+            <p className={cn("text-sm", c.accent)}>Software Developer · AI-Assisted Developer</p>
           </div>
         </div>
         <div className="mt-6 space-y-3 text-sm leading-relaxed">
           <p className={c.muted}>
-            B.Sc. Computer Science graduate building practical, user-focused web and mobile applications.
-            I combine strong engineering fundamentals with modern AI tooling to ship faster, cleaner,
+            I am a B.Sc. Computer Science graduate currently working as a Software Developer at Microbotware Technologies. 
+            I combine strong engineering fundamentals with modern AI tooling to ship faster, cleaner, 
             better-tested code.
           </p>
           <p className={c.muted}>
-            I work across the stack — from designing responsive interfaces and building REST APIs to
-            handling authentication, databases, and application architecture. I believe in learning by
+            I work across the stack — from designing responsive interfaces and building REST APIs to 
+            handling authentication, databases, and application architecture. I believe in learning by 
             building, solving real-world problems, and continuously improving the quality of my code.
           </p>
           <p className={c.muted}>
-            AI is embedded in how I design, build, and ship software — as a force multiplier, not a
-            shortcut. From prompt engineering to agentic workflows with tools like Cursor, Claude, and
+            AI is embedded in how I design, build, and ship software — as a force multiplier, not a 
+            shortcut. From prompt engineering to agentic workflows with tools like Cursor, Claude, and 
             GitHub Copilot, AI is a core part of my day-to-day development.
           </p>
         </div>
+        
+        {/* Added Briefcase icon for the company */}
         <div className={cn("mt-6 flex flex-wrap gap-4 text-sm", c.muted)}>
-          <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4" /> {site.location}</span>
-          <span className="inline-flex items-center gap-1.5"><GraduationCap className="h-4 w-4" /> B.Sc. Computer Science</span>
+          <span className="inline-flex items-center gap-1.5">
+            <Briefcase className="h-4 w-4" /> Microbotware Technologies
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <GraduationCap className="h-4 w-4" /> B.Sc. Computer Science
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <MapPin className="h-4 w-4" /> {site.location}
+          </span>
         </div>
       </div>
     </section>

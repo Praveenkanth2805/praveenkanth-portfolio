@@ -50,7 +50,7 @@ export function Hero() {
     <section className={cn("relative overflow-hidden rounded-3xl px-6 py-12 md:px-10 md:py-16", c.heroGradient)}>
       <div className="grid items-center gap-10 md:grid-cols-2">
         
-        {/* Text Content: Back to Left (Default DOM order) */}
+        {/* Text Content */}
         <div>
           <div className={cn("mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium", c.accentBgSoft)}>
             <Sparkles className="h-3.5 w-3.5" />
@@ -72,7 +72,7 @@ export function Hero() {
           </p>
           
           <p className={cn("mt-4 max-w-xl text-sm leading-relaxed", c.muted)}>
-            B.Sc. Computer Science graduate building practical, user-focused web and mobile applications — with AI embedded in the development workflow.
+            Software Developer at Microbotware Technologies, building practical, user-focused web and mobile applications — with AI embedded in the development workflow.
           </p>
           
           <div className="mt-8 flex flex-wrap gap-3">
@@ -91,7 +91,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Terminal: Back to Right, with 3D Tilt Effect */}
+        {/* Terminal with 3D Tilt */}
         <div className="md:perspective-[1000px]">
           <div className="transition-transform duration-500 ease-out md:[transform:rotateY(-6deg)_rotateX(2deg)] md:hover:[transform:rotateY(0deg)_rotateX(0deg)]">
             <Terminal
