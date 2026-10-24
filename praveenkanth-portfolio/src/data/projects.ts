@@ -150,9 +150,9 @@ export const projects: Project[] = [
     id: "uzhavar-neradi",
     title: "Uzhavar Neradi",
     description:
-      "Tamil-first platform connecting farmers directly with customers, reducing unnecessary intermediaries.",
+      "Tamil-first platform connecting farmers directly with customers, reducing unnecessary intermediaries. Built as a final course project for the Python with GenAI program at VGLUG Foundation.",
     technologies: ["React", "Tailwind CSS", "Django REST Framework", "PostgreSQL", "Razorpay"],
-    categories: ["Full-Stack", "E-commerce", "Web App"],
+    categories: ["Full-Stack", "E-commerce", "Web App", "Course Project"],
     featured: true,
     github: "https://github.com/Praveenkanth2805/Uzhavar-Neradi-Direct-from-Farmers",
     imageType: "illustration",
