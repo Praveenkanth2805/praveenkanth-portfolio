@@ -29,7 +29,7 @@ export function Terminal({
         <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
         <span className={cn("ml-2", c.muted)}>{title}</span>
       </div>
-      <div className="max-h-72 space-y-1 overflow-y-auto p-4">
+      <div className={cn("max-h-72 space-y-1 overflow-y-auto p-4", c.scrollbar)}>
         {lines.map((l, i) => (
           <p
             key={i}

@@ -25,12 +25,11 @@ export function ProjectCard({
     >
       <div
         className={cn(
-          "flex aspect-[16/9] items-center justify-center rounded-xl border",
-          c.divider,
-          c.accentBgSoft,
+          "flex aspect-[16/9] items-center justify-center rounded-xl overflow-hidden",
+          c.cardPreview,
         )}
       >
-        <FolderGit2 className="h-10 w-10 opacity-60" aria-hidden />
+        <FolderGit2 className={cn("h-10 w-10 opacity-60", c.accent)} aria-hidden />
       </div>
       <div>
         <h3 className={cn("text-lg font-semibold", c.pageText)}>{project.title}</h3>

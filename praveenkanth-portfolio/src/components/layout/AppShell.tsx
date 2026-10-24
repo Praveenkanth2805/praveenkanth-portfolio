@@ -11,10 +11,10 @@ import { cn } from "@/lib/cn";
 function Shell({ children }: { children: ReactNode }) {
   const { c } = useTheme();
   return (
-    <div className={cn("flex min-h-screen", c.pageBg, c.pageText)}>
+    <div className={cn("flex h-screen overflow-hidden", c.pageBg, c.pageText)}>
       <Sidebar />
       <MobileDrawerOverlay />
-      <div className="flex min-w-0 flex-1 flex-col">
+      <div className={cn("flex min-w-0 flex-1 flex-col overflow-y-auto", c.scrollbar)}>
         <Toolbar />
         <main className="flex-1 px-4 py-8 md:px-8">{children}</main>
         <Footer />
