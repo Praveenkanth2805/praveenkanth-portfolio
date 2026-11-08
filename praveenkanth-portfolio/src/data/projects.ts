@@ -120,6 +120,24 @@ export const projects: Project[] = [
       "Cloudinary integration for optimized image management.",
     ],
   },
+    {
+    id: "college-attendance-management",
+    title: "College Attendance Management System",
+    description:
+      "A specialized attendance tracking web application built for college faculty. Implements complex institutional rules like 5-hour daily logic and auto-calculates full-day absence if a student misses the final period.",
+    technologies: ["Next.js", "Python", "FastAPI", "PostgreSQL", "Tailwind CSS"],
+    categories: ["Client Work", "Education", "Web App"],
+    projectType: "client",
+    featured: false,
+    imageType: "illustration",
+    // image: "/projects/college-attendance.png", // Add image path here
+    features: [
+      "Custom attendance rules (e.g., 5-hour logic, last period absent = full day absent)",
+      "Tailored specifically for the college's departmental workflow",
+      "Fast and responsive UI for faculty to mark attendance quickly",
+      "Secure data handling for student records",
+    ],
+  },
   {
     id: "kaviya-boutique",
     title: "Kaviya Boutique",
